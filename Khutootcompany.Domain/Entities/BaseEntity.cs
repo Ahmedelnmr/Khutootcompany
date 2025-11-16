@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Khutootcompany.Domain
+namespace Khutootcompany.Domain.Entities
 {
     public abstract class BaseEntity
     {
