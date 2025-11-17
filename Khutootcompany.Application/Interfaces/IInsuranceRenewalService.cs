@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Khutootcompany.Domain.Enums
+namespace Khutootcompany.Application.Interfaces
 {
-    public class LicenseType
+    internal class IInsuranceRenewalService
     {
-
     }
 }
