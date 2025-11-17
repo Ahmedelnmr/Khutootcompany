@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Khutootcompany.Domain.Enums
 {
-    internal class LicenseType
+    public class LicenseType
     {
+
     }
 }
