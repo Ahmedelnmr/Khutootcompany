@@ -1,9 +1,11 @@
 ﻿using Khutootcompany.Application.Interfaces;
 using Khutootcompany.Domain.Interfaces;
+using QuestPDF.Infrastructure;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +23,8 @@ namespace Khutootcompany.Application.Services
             // Set QuestPDF license
             QuestPDF.Settings.License = LicenseType.Community;
         }
+        decimal totalIncome = 0;
+        decimal totalExpense = 0;
 
         public async Task<byte[]> GeneratePAMReportAsync()
         {
@@ -407,8 +411,7 @@ namespace Khutootcompany.Application.Services
                                     .Text("الوصف").FontColor(Colors.White).Bold().AlignRight();
                             });
 
-                            decimal totalIncome = 0;
-                            decimal totalExpense = 0;
+                    
 
                             foreach (var trans in transactions.OrderBy(t => t.TransactionDate))
                             {

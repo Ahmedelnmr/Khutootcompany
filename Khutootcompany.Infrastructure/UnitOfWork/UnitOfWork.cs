@@ -30,7 +30,7 @@ namespace Khutootcompany.Infrastructure.UnitOfWork
         }
 
         public ITruckRepository Trucks =>
-            _trucks ??= new TruckRepository(_context);
+            _trucks ??= (ITruckRepository)new TruckRepository(_context);
 
         public IEmployeeRepository Employees =>
             _employees ??= new EmployeeRepository(_context);
@@ -54,10 +54,10 @@ namespace Khutootcompany.Infrastructure.UnitOfWork
             _auditLogs ??= new AuditLogRepository(_context);
 
         public IRepository<TruckAssignment> TruckAssignments =>
-            _truckAssignments ??= new Repository<TruckAssignment>(_context);
+            _truckAssignments ??= new GenericRepository<TruckAssignment>(_context);
 
         public IRepository<InstallmentPayment> InstallmentPayments =>
-            _installmentPayments ??= new Repository<InstallmentPayment>(_context);
+            _installmentPayments ??= new GenericRepository<InstallmentPayment>(_context);
 
         public async Task<int> SaveChangesAsync()
         {
