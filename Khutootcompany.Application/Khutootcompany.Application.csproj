@@ -15,7 +15,11 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+<<<<<<< HEAD
+    <PackageReference Include="QuestPDF" Version="2024.12.3" />
+=======
 >>>>>>> d3af29315ae7c0fd33ee257fc49f4b8897c40d7e
+>>>>>>> f665a7ad4fe8f29d70fc7dd3bcbd1b099de57b42
   </ItemGroup>
 
   <ItemGroup>

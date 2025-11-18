@@ -1,18 +1,16 @@
 using Khutootcompany.Domain.Interfaces;
 using Khutootcompany.Application.Interfaces;
 using Khutootcompany.Application.Services;
-using Khutootcompany.Core.Interfaces;
 using Khutootcompany.Infrastructure.Data;
-using Khutootcompany.Infrastructure.Repositories;
-using Khutootcompany.Infrastructure.Seed;
 using Khutootcompany.Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
 namespace Khutootcompany.domin
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +22,7 @@ namespace Khutootcompany.domin
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     builder.Configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly("KhutootTrucks.Infrastructure")));
+                    b => b.MigrationsAssembly("Khutootcompany.Infrastructure")));
 
             // Identity
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -125,9 +123,7 @@ namespace Khutootcompany.domin
                         }
                     }
 
-                    // Seed data (112 trucks, employees, etc.)
-                    await DataSeeder.SeedAsync(context);
-                    await DataSeeder.SeedSampleDataAsync(context);
+                   
                 }
                 catch (Exception ex)
                 {

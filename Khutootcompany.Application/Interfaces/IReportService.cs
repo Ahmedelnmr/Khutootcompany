@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Khutootcompany.Application.Interfaces
 {
-    internal class IReportService
+    public interface IReportService
     {
+        Task<byte[]> GeneratePAMReportAsync();
+        Task<byte[]> GenerateExpiredResidenciesReportAsync();
+        Task<byte[]> GenerateOverdueInstallmentsReportAsync();
+        Task<byte[]> GenerateExpiredWakalatReportAsync();
+        Task<byte[]> GenerateExpiredInsuranceReportAsync();
+        Task<byte[]> GenerateMonthlyCashReportAsync(int year, int month);
     }
 }
