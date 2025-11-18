@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 ﻿using Khutootcompany.Domain.Entities;
 using Khutootcompany.Domain.Enums;
 using Khutootcompany.Domain.Interfaces;
 using Khutootcompany.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
+=======
+﻿using System;
+>>>>>>> f665a7ad4fe8f29d70fc7dd3bcbd1b099de57b42
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +15,7 @@ using System.Threading.Tasks;
 
 namespace Khutootcompany.Infrastructure.Repositories
 {
+<<<<<<< HEAD
     public class CashTransactionRepository : GenericRepository<CashTransaction>, ICashTransactionRepository
     {
         public CashTransactionRepository(ApplicationDbContext context) : base(context) { }
@@ -78,5 +83,9 @@ namespace Khutootcompany.Infrastructure.Repositories
                 .OrderBy(t => t.TransactionDate)
                 .ToListAsync();
         }
+=======
+    internal class CashTransactionRepository
+    {
+>>>>>>> f665a7ad4fe8f29d70fc7dd3bcbd1b099de57b42
     }
 }
