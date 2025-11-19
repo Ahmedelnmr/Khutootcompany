@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 ﻿using Khutootcompany.Domain.Entities;
 using Khutootcompany.Domain.Interfaces;
 using Khutootcompany.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
+=======
+﻿using System;
+>>>>>>> f665a7ad4fe8f29d70fc7dd3bcbd1b099de57b42
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace Khutootcompany.Infrastructure.Repositories
 {
+<<<<<<< HEAD
     public class WakalaRepository : GenericRepository<Wakala>, IWakalaRepository
     {
         public WakalaRepository(ApplicationDbContext context) : base(context) { }
@@ -60,5 +65,9 @@ namespace Khutootcompany.Infrastructure.Repositories
                 .OrderByDescending(w => w.IssueDate)
                 .ToListAsync();
         }
+=======
+    internal class WakalaRepository
+    {
+>>>>>>> f665a7ad4fe8f29d70fc7dd3bcbd1b099de57b42
     }
 }
