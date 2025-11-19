@@ -223,11 +223,25 @@ namespace Khutootcompany.Infrastructure.Data
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            ApplyAuditInfo();
-            LogChanges();
-            return await base.SaveChangesAsync(cancellationToken);
-        }
+            var username = _httpContextAccessor?.HttpContext?.User?.Identity?.Name ?? "System";
 
+            var auditEntries = ChangeTracker.Entries<BaseEntity>()
+                .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified || e.State == EntityState.Deleted)
+                .Select(entry => new AuditLog { /* نفس الكود */ })
+                .ToList();
+
+            ApplyAuditInfo();
+
+            var result = await base.SaveChangesAsync(cancellationToken);
+
+            if (auditEntries.Any())
+            {
+                AuditLogs.AddRange(auditEntries);
+                await base.SaveChangesAsync(cancellationToken);
+            }
+
+            return result;
+        }
         private void ApplyAuditInfo()
         {
             var username = _httpContextAccessor?.HttpContext?.User?.Identity?.Name ?? "System";

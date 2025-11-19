@@ -59,7 +59,7 @@ namespace Khutootcompany.presention.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create(CashTransactionDto transaction)
+        public async Task<IActionResult> Create(CreateCashTransactionDto transaction)
         {
             if (ModelState.IsValid)
             {

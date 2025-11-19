@@ -73,7 +73,7 @@ namespace Khutootcompany.Application.Services
             return await _unitOfWork.CashTransactions.GetCurrentBalanceAsync();
         }
 
-        public async Task<CashTransactionDto> CreateTransactionAsync(CashTransactionDto dto, string username)
+        public async Task<CashTransactionDto> CreateTransactionAsync(CreateCashTransactionDto dto, string username)
         {
             var transaction = new CashTransaction
             {

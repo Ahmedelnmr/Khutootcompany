@@ -19,7 +19,7 @@ namespace Khutootcompany.Application.Interfaces
         Task<IEnumerable<CashTransactionDto>> GetLatestTransactionsAsync(int count = 10);
         Task<IEnumerable<CashTransactionDto>> GetMonthlyTransactionsAsync(int year, int month);
         Task<decimal> GetCurrentBalanceAsync();
-        Task<CashTransactionDto> CreateTransactionAsync(CashTransactionDto dto, string username);
+        Task<CashTransactionDto> CreateTransactionAsync(CreateCashTransactionDto dto, string username);
         Task<CashTransactionDto> UpdateTransactionAsync(CashTransactionDto dto, string username);
         Task DeleteTransactionAsync(int id, string username);
     }

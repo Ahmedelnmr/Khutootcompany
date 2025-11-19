@@ -1,5 +1,6 @@
 ﻿using Khutootcompany.Domain.Entities;
 using Khutootcompany.Domain.Enums;
+using Khutootcompany.Domain.Interfaces;
 using Khutootcompany.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Khutootcompany.Infrastructure.Repositories
 {
-    public class TruckRepository : GenericRepository<Truck>
+    public class TruckRepository : GenericRepository<Truck>, ITruckRepository
     {
         public TruckRepository(ApplicationDbContext context) : base(context) { }
 
